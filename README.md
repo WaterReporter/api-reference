@@ -540,7 +540,7 @@ Retrieve a station. A station represents a single monitoring location.
 **Request**
 
 ```
-GET https://api.waterreporter.org/stations/1?geo_format=xy&nn=true&access_token={token}
+GET https://api.waterreporter.org/stations/1?access_token={token}&geo_format=xy&nn=true
 ```
 
 **Response**
@@ -667,7 +667,7 @@ Retrieve the station closest to a geographic point. A station represents a singl
 **Request**
 
 ```
-GET https://api.waterreporter.org/stations/1?geo_format=xy&nn=true&access_token={token}
+GET https://api.waterreporter.org/stations/nearest?access_token={token}&lng=-76.609811&lat=39.28499&geo_format=xy
 ```
 
 **Response**
@@ -687,81 +687,6 @@ GET https://api.waterreporter.org/stations/1?geo_format=xy&nn=true&access_token=
     "lat": 39.28499,
     "lng": -76.609811,
     "name": "Dragon Boats",
-    "neighbors": {
-        "all": [{
-                "geometry": {
-                    "coordinates": [
-                        -76.623106,
-                        39.263507
-                    ],
-                    "type": "Point"
-                },
-                "id": 2,
-                "lng": -76.623106,
-                "name": "Middle Branch A"
-            },
-            {
-                "geometry": {
-                    "coordinates": [
-                        -76.611053,
-                        39.282422
-                    ],
-                    "type": "Point"
-                },
-                "id": 3,
-                "lng": -76.611053,
-                "name": "Science Center"
-            },
-            {
-                "geometry": {
-                    "coordinates": [
-                        -76.603718,
-                        39.283701
-                    ],
-                    "type": "Point"
-                },
-                "id": 4,
-                "lng": -76.603718,
-                "name": "Jones Falls Outlet"
-            },
-            {
-                "geometry": {
-                    "coordinates": [
-                        -76.596738,
-                        39.276857
-                    ],
-                    "type": "Point"
-                },
-                "id": 5,
-                "lng": -76.596738,
-                "name": "Northwest Branch A"
-            }
-        ],
-        "immediate": {
-            "east": {
-                "geometry": {
-                    "coordinates": [
-                        -76.603718,
-                        39.283701
-                    ],
-                    "type": "Point"
-                },
-                "id": 4,
-                "name": "Jones Falls Outlet"
-            },
-            "west": {
-                "geometry": {
-                    "coordinates": [
-                        -76.611053,
-                        39.282422
-                    ],
-                    "type": "Point"
-                },
-                "id": 3,
-                "name": "Science Center"
-            }
-        }
-    },
     "organization_id": 1,
     "parameter_count": 10,
     "parameters": [
@@ -800,24 +725,24 @@ GET https://api.waterreporter.org/watersheds?access_token={token}&lng=-77.113056
 
 ```json
 {
-	"feature": {
-		"huc_10": {
-			"code": "0207001001",
-			"name": "Rock Creek-Potomac River"
-		},
-		"huc_12": {
-			"code": "020700100102",
-			"name": "Lower Rock Creek"
-		},
-		"huc_6": {
-			"code": "020700",
-			"name": "Potomac"
-		},
-		"huc_8": {
-			"code": "02070010",
-			"name": "Middle Potomac-Anacostia-Occoquan"
-		}
-	}
+    "feature": {
+        "huc_10": {
+            "code": "0207001001",
+            "name": "Rock Creek-Potomac River"
+        },
+        "huc_12": {
+            "code": "020700100102",
+            "name": "Lower Rock Creek"
+        },
+        "huc_6": {
+            "code": "020700",
+            "name": "Potomac"
+        },
+        "huc_8": {
+            "code": "02070010",
+            "name": "Middle Potomac-Anacostia-Occoquan"
+        }
+    }
 }
 ```
 
@@ -843,24 +768,24 @@ GET https://api.waterreporter.org/watersheds/020700&access_token={token}
 
 ```json
 {
-	"feature": {
-		"huc_10": {
-			"code": "0207001001",
-			"name": "Rock Creek-Potomac River"
-		},
-		"huc_12": {
-			"code": "020700100102",
-			"name": "Lower Rock Creek"
-		},
-		"huc_6": {
-			"code": "020700",
-			"name": "Potomac"
-		},
-		"huc_8": {
-			"code": "02070010",
-			"name": "Middle Potomac-Anacostia-Occoquan"
-		}
-	}
+    "feature": {
+        "huc_10": {
+            "code": "0207001001",
+            "name": "Rock Creek-Potomac River"
+        },
+        "huc_12": {
+            "code": "020700100102",
+            "name": "Lower Rock Creek"
+        },
+        "huc_6": {
+            "code": "020700",
+            "name": "Potomac"
+        },
+        "huc_8": {
+            "code": "02070010",
+            "name": "Middle Potomac-Anacostia-Occoquan"
+        }
+    }
 }
 ```
 
