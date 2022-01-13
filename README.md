@@ -26,6 +26,7 @@ The Water Reporter API is served over HTTPS. To ensure data privacy, unencrypted
 * [Readings](#readings)
 * [Parameters](#parameters)
 * [Stations](#stations)
+* [Watersheds](#watersheds)
 
 ### Datasets
 
@@ -645,3 +646,221 @@ GET https://api.waterreporter.org/stations/1?geo_format=xy&nn=true&access_token=
     "updated": "2021-01-01T00:00:00"
 }
 ```
+
+#### Retrieve the station closest to a geographic point
+
+`GET /stations/nearest`
+
+Retrieve the station closest to a geographic point. A station represents a single monitoring location.
+
+**Parameters**
+
+| Name | Type| Description |
+| :--- | :--- | :--- |
+| `access_token`<br /><sub>required</sub> | string |  Your Water Reporter access token. |
+| `lng`<br /><sub>required</sub> | float | A geographic coordinate that specifies the east–west position of a point on the Earth's surface. Must be in decimal degrees. |
+| `lat`<br /><sub>required</sub> | float | A geographic coordinate that specifies the north–south position of a point on the Earth's surface. Must be in decimal degrees. |
+| `date_format` | string | A string that specifies the desired format of all timestamps in the response object. Using `epoch` will format timestamps in seconds since the Unix epoch. Allowed values are `iso` and `epoch`. **Default:** `iso` |
+| `geo_format` | string | A string that specifies the desired geometry transformation. Use `xy` to retrieve station coordinates as separate `lat` and `lng` values. Allowed values are `geojson` and `xy`. **Default:** `geojson` |
+| `nn` | boolean | If true, the response will include a station's four nearest neighbors in the same data source (if any). The `neighbors` object will contain a dictionary that specifies the stations immediately to the east and west of the target station. Allowed values are `true` and `false`. **Default:** `false` |
+
+**Request**
+
+```
+GET https://api.waterreporter.org/stations/1?geo_format=xy&nn=true&access_token={token}
+```
+
+**Response**
+
+```json
+{
+    "created": "2021-01-01T00:00:00",
+    "dataset_id": 1,
+    "description": "...",
+    "hibernate": false,
+    "huc_12": "Northwest Harbor-Patapsco River",
+    "id": 1,
+    "image_url": "...",
+    "is_active": true,
+    "key": "79f255537964bafb",
+    "last_sampled": "2021-01-01T00:00:00",
+    "lat": 39.28499,
+    "lng": -76.609811,
+    "name": "Dragon Boats",
+    "neighbors": {
+        "all": [{
+                "geometry": {
+                    "coordinates": [
+                        -76.623106,
+                        39.263507
+                    ],
+                    "type": "Point"
+                },
+                "id": 2,
+                "lng": -76.623106,
+                "name": "Middle Branch A"
+            },
+            {
+                "geometry": {
+                    "coordinates": [
+                        -76.611053,
+                        39.282422
+                    ],
+                    "type": "Point"
+                },
+                "id": 3,
+                "lng": -76.611053,
+                "name": "Science Center"
+            },
+            {
+                "geometry": {
+                    "coordinates": [
+                        -76.603718,
+                        39.283701
+                    ],
+                    "type": "Point"
+                },
+                "id": 4,
+                "lng": -76.603718,
+                "name": "Jones Falls Outlet"
+            },
+            {
+                "geometry": {
+                    "coordinates": [
+                        -76.596738,
+                        39.276857
+                    ],
+                    "type": "Point"
+                },
+                "id": 5,
+                "lng": -76.596738,
+                "name": "Northwest Branch A"
+            }
+        ],
+        "immediate": {
+            "east": {
+                "geometry": {
+                    "coordinates": [
+                        -76.603718,
+                        39.283701
+                    ],
+                    "type": "Point"
+                },
+                "id": 4,
+                "name": "Jones Falls Outlet"
+            },
+            "west": {
+                "geometry": {
+                    "coordinates": [
+                        -76.611053,
+                        39.282422
+                    ],
+                    "type": "Point"
+                },
+                "id": 3,
+                "name": "Science Center"
+            }
+        }
+    },
+    "organization_id": 1,
+    "parameter_count": 10,
+    "parameters": [
+        "..."
+    ],
+    "raw_id": "Dragon Boats",
+    "reading_count": 100,
+    "sample_count": 10,
+    "updated": "2021-01-01T00:00:00"
+}
+```
+
+### Watersheds
+
+#### Spatial search
+
+`GET /watersheds/intersect`
+
+Retrieve a single watershed using a coordinate pair (longitude, latitude).
+
+**Parameters**
+
+| Name | Type| Description |
+| :--- | :--- | :--- |
+| `access_token`<br /><sub>required</sub> | string |  Your Water Reporter access token. |
+| `lng`<br /><sub>required</sub> | float | A geographic coordinate that specifies the east–west position of a point on the Earth's surface. Must be in decimal degrees. |
+| `lat`<br /><sub>required</sub> | float | A geographic coordinate that specifies the north–south position of a point on the Earth's surface. Must be in decimal degrees. |
+
+**Request**
+
+```
+GET https://api.waterreporter.org/watersheds?access_token={token}&lng=-77.113056&lat=38.984722
+```
+
+**Response**
+
+```json
+{
+	"feature": {
+		"huc_10": {
+			"code": "0207001001",
+			"name": "Rock Creek-Potomac River"
+		},
+		"huc_12": {
+			"code": "020700100102",
+			"name": "Lower Rock Creek"
+		},
+		"huc_6": {
+			"code": "020700",
+			"name": "Potomac"
+		},
+		"huc_8": {
+			"code": "02070010",
+			"name": "Middle Potomac-Anacostia-Occoquan"
+		}
+	}
+}
+```
+
+#### Retrieve a single watershed
+
+`GET /watersheds/:code`
+
+Retrieve a watershed using a 6-, 8-, 10-, or 12-digit [hydrologic unit code](https://nas.er.usgs.gov/hucs.aspx).
+
+**Parameters**
+
+| Name | Type| Description |
+| :--- | :--- | :--- |
+| `access_token`<br /><sub>required</sub> | string |  Your Water Reporter access token. |
+
+**Request**
+
+```
+GET https://api.waterreporter.org/watersheds/020700&access_token={token}
+```
+
+**Response**
+
+```json
+{
+	"feature": {
+		"huc_10": {
+			"code": "0207001001",
+			"name": "Rock Creek-Potomac River"
+		},
+		"huc_12": {
+			"code": "020700100102",
+			"name": "Lower Rock Creek"
+		},
+		"huc_6": {
+			"code": "020700",
+			"name": "Potomac"
+		},
+		"huc_8": {
+			"code": "02070010",
+			"name": "Middle Potomac-Anacostia-Occoquan"
+		}
+	}
+}
+```
+
