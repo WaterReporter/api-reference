@@ -718,7 +718,7 @@ Retrieve a single watershed using a coordinate pair (longitude, latitude).
 **Request**
 
 ```
-GET https://api.waterreporter.org/watersheds?access_token={token}&lng=-77.113056&lat=38.984722
+GET https://api.waterreporter.org/watersheds/intersect?access_token={token}&lng=-77.113056&lat=38.984722
 ```
 
 **Response**
