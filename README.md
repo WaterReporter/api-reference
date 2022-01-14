@@ -660,7 +660,7 @@ Retrieve the station closest to a geographic point. A station represents a singl
 | `access_token`<br /><sub>required</sub> | string |  Your Water Reporter access token. |
 | `lng`<br /><sub>required</sub> | integer or float | A geographic coordinate that specifies the east–west position of a point on the Earth's surface. Must be in decimal degrees. |
 | `lat`<br /><sub>required</sub> | integer or float | A geographic coordinate that specifies the north–south position of a point on the Earth's surface. Must be in decimal degrees. |
-| `radius` | integer or float | Search radius in meters as measured from the point represented by `lng` and `lat`. **Limited to 10 km.**  |
+| `radius` | integer or float | Search radius in meters as measured from the point represented by `lng` and `lat`. **Limited to 20 kilometers (20,000 meters).**  |
 | `date_format` | string | A string that specifies the desired format of all timestamps in the response object. Using `epoch` will format timestamps in seconds since the Unix epoch. Allowed values are `iso` and `epoch`. **Default:** `iso` |
 | `geo_format` | string | A string that specifies the desired geometry transformation. Use `xy` to retrieve station coordinates as separate `lat` and `lng` values. Allowed values are `geojson` and `xy`. **Default:** `geojson` |
 | `nn` | boolean | If true, the response will include a station's four nearest neighbors in the same data source (if any). The `neighbors` object will contain a dictionary that specifies the stations immediately to the east and west of the target station. Allowed values are `true` and `false`. **Default:** `false` |
