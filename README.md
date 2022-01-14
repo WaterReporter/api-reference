@@ -8,7 +8,7 @@ Your API keys carry many privileges so be sure to keep them secure! Do not share
 
 ## Errors
 
-Water Reporter uses conventional HTTP response codes to indicate the success or failure of an API request. In general, codes in the `2xx` range indicate success; codes in the `4xx` range indicate that a request failed given the information provided (e.g. a required parameter was omitted or invalid); and codes in the `5xx` range indicate an error with Water Reporter's servers.
+Water Reporter uses conventional HTTP response codes to indicate the success or failure of an API request. In general, codes in the `2xx` range indicate success; codes in the `4xx` range indicate that a request failed given the information provided (e.g. a required parameter was missing or invalid); and codes in the `5xx` range indicate an error with Water Reporter's servers.
 
 ## Base URL
 
