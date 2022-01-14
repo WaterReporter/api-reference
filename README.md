@@ -34,7 +34,7 @@ The Water Reporter API is served over HTTPS. To ensure data privacy, unencrypted
 
 `GET /datasets`
 
-Retrieve a collection of data sources belonging to an organization.
+Retrieve a list of data sources. Supports spatial search using hydrologic unit codes, bounding boxes, or geographic point coordinates (proximity).
 
 **Parameters**
 
@@ -44,7 +44,9 @@ Retrieve a collection of data sources belonging to an organization.
 | `sets` | string | A comma-separated list of one or more data source identifiers. |
 | `orgs` | string | A comma-separated list of one or more organization identifiers. |
 | `date_format` | string | A string that specifies the desired format of all timestamps in the response object. Using `epoch` will format timestamps in seconds since the Unix epoch. Allowed values are `iso` and `epoch`. **Default:** `iso` |
-| `bbox` | string | A comma-separated list of bounding box coordinates in the format `minX,minY,maxX,maxY`. Example: `-76.616539,39.269442,-76.58255,39.291366` |
+| `huc` | string | A 6-, 8-, 10-, or 12-digit [hydrologic unit code](https://nas.er.usgs.gov/hucs.aspx). |
+| `point` | string | A geographic coordinate pair in the format `longitude,latitude`. **Cannot be combined with `bbox`.** Example: `-77.0364,38.8951` |
+| `bbox` | string | A comma-separated list of bounding box coordinates in the format `minX,minY,maxX,maxY`. **Cannot be combined with `point`.** Example: `-76.616539,39.269442,-76.58255,39.291366` |
 
 **Request**
 
