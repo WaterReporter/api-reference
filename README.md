@@ -1,4 +1,4 @@
-The Water Reporter API is organized around [REST](http://en.wikipedia.org/wiki/Representational_State_Transfer). Our API has predictable resource-oriented URLs, accepts form-encoded request bodies, returns [JSON-encoded](http://www.json.org/) responses, and uses standard HTTP response codes, authentication, and verbs.
+The Water Reporter API is organized around <a href="https://en.wikipedia.org/wiki/Representational_state_transfer" target="_blank">REST</a>. Our API has predictable resource-oriented URLs, accepts form-encoded request bodies, returns <a href="https://www.json.org" target="_blank">JSON-encoded</a> responses, and uses standard <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Status" target="_blank">HTTP response codes</a>, authentication, and <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods" target="_blank">methods</a>.
 
 ## Authentication
 
@@ -44,7 +44,7 @@ Retrieve a list of data sources. Supports spatial search using hydrologic unit c
 | `sets` | string | A comma-separated list of one or more data source identifiers. |
 | `orgs` | string | A comma-separated list of one or more organization identifiers. |
 | `date_format` | string | A string that specifies the desired format of all timestamps in the response object. Using `epoch` will format timestamps in seconds since the Unix epoch. Allowed values are `iso` and `epoch`. **Default:** `iso` |
-| `huc` | string | A 6-, 8-, 10-, or 12-digit [hydrologic unit code](https://nas.er.usgs.gov/hucs.aspx). |
+| `huc` | string | A 6-, 8-, 10-, or 12-digit <a href="https://nas.er.usgs.gov/hucs.aspx" target="_blank">hydrologic unit code</a>. |
 | `point` | string | A geographic coordinate pair in the format `longitude,latitude`. **Cannot be combined with `bbox`.** Example: `-77.0364,38.8951` |
 | `bbox` | string | A comma-separated list of bounding box coordinates in the format `minX,minY,maxX,maxY`. **Cannot be combined with `point`.** Example: `-76.616539,39.269442,-76.58255,39.291366` |
 
@@ -757,7 +757,7 @@ GET https://api.waterreporter.org/watersheds/intersect?access_token={token}&lng=
 
 `GET /watersheds/:code`
 
-Retrieve a watershed using a 6-, 8-, 10-, or 12-digit [hydrologic unit code](https://nas.er.usgs.gov/hucs.aspx).
+Retrieve a watershed using a 6-, 8-, 10-, or 12-digit <a href="https://nas.er.usgs.gov/hucs.aspx" target="_blank">hydrologic unit code</a>.
 
 **Parameters**
 
