@@ -4,7 +4,7 @@ The Water Reporter API is organized around <a href="https://en.wikipedia.org/wik
 
 The Water Reporter API uses API keys to authenticate requests. You can view and manage your API keys in your Water Reporter dashboard.
 
-Your API keys carry many privileges, so be sure to keep them secure! Do not share your API keys in publicly accessible areas such as GitHub, client-side code, and so forth.
+Your API keys carry many privileges so be sure to keep them secure! Do not share your API keys in publicly accessible areas such as GitHub, client-side code, and so forth.
 
 ## Errors
 
