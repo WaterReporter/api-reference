@@ -40,7 +40,11 @@ Retrieve a collection of data sources belonging to an organization.
 
 | Name | Type| Description |
 | :--- | :--- | :--- |
-| `access_token`<br /><sub>required</sub> | string |  Your Water Reporter access token. | |
+| `access_token`<br /><sub>required</sub> | string |  Your Water Reporter access token. |
+| `sets` | string | A comma-separated list of one or more data source identifiers. |
+| `orgs` | string | A comma-separated list of one or more organization identifiers. |
+| `date_format` | string | A string that specifies the desired format of all timestamps in the response object. Using `epoch` will format timestamps in seconds since the Unix epoch. Allowed values are `iso` and `epoch`. **Default:** `iso` |
+| `bbox` | string | A comma-separated list of bounding box coordinates in the format `minX,minY,maxX,maxY`. Example: `-76.616539,39.269442,-76.58255,39.291366` |
 
 **Request**
 
@@ -484,7 +488,7 @@ Retrieve a collection of stations (monitoring locations).
 | `orgs`<br /><sub>required</sub> | string | A comma-separated list of one or more organization identifiers. Required if `sets` not present. |
 | `date_format` | string | A string that specifies the desired format of all timestamps in the response object. Using `epoch` will format timestamps in seconds since the Unix epoch. Allowed values are `iso` and `epoch`. **Default:** `iso` |
 | `geo_format` | string | A string that specifies the desired geometry transformation. Use `xy` to retrieve station coordinates as separate `lat` and `lng` values. Allowed values are `geojson` and `xy`. **Default:** `geojson` |
-| `bbox` | string | A comma-separated list of bounding box coordinates in the format `minX,minY,maxX,maxY`. Example: `-76.616539,39.269442,-76.58255,39.291366`  |
+| `bbox` | string | A comma-separated list of bounding box coordinates in the format `minX,minY,maxX,maxY`. Example: `-76.616539,39.269442,-76.58255,39.291366` |
 
 **Request**
 
