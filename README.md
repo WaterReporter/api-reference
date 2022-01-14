@@ -41,7 +41,6 @@ Retrieve a list of data sources. Supports spatial search using hydrologic unit c
 | Name | Type| Description |
 | :--- | :--- | :--- |
 | `access_token`<br /><sub>required</sub> | string |  Your Water Reporter access token. |
-| `sets` | string | A comma-separated list of one or more data source identifiers. |
 | `orgs` | string | A comma-separated list of one or more organization identifiers. |
 | `date_format` | string | A string that specifies the desired format of all timestamps in the response object. Using `epoch` will format timestamps in seconds since the Unix epoch. Allowed values are `iso` and `epoch`. **Default:** `iso` |
 | `huc` | string | A 6-, 8-, 10-, or 12-digit <a href="https://nas.er.usgs.gov/hucs.aspx" target="_blank">hydrologic unit code</a>. |
