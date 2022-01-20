@@ -41,8 +41,10 @@ Retrieve a list of data sources. Supports spatial search using hydrologic unit c
 | Name | Type| Description |
 | :--- | :--- | :--- |
 | `access_token`<br /><sub>required</sub> | string |  Your Water Reporter access token. |
-| `orgs` | string | A comma-separated list of one or more organization identifiers. |
+| `limit` | integer | The number of objects to be returned. Limit can range between 1 and 100. **Default:** 10. |
+| `page` | integer | The result set page to be returned. **Default:** 1. |
 | `date_format` | string | A string that specifies the desired format of all timestamps in the response object. Using `epoch` will format timestamps in seconds since the Unix epoch. Allowed values are `iso` and `epoch`. **Default:** `iso` |
+| `orgs` | string | A comma-separated list of one or more organization identifiers. |
 | `huc` | string | A 6-, 8-, 10-, or 12-digit <a href="https://nas.er.usgs.gov/hucs.aspx" target="_blank">hydrologic unit code</a>. |
 | `point` | string | A geographic coordinate pair in the format `longitude,latitude`. Example: `-77.0364,38.8951` |
 | `radius` | integer or float | Search radius in meters as measured from `point`. **Limited to 20 kilometers (20,000 meters). Has no effect unless combined with `point`.** |
@@ -57,6 +59,37 @@ GET https://api.waterreporter.org/datasets?access_token={token}
 **Response**
 
 ```json
+{
+    "results": [
+        {
+            "created_at": "2022-01-01T00:00:00.000000",
+            "id": 1,
+            "name": "Trends Analysis 2009-2019",
+            "organization": {
+                "id": 1,
+                "logo_url": "https://images.waterreporter.org/1216/0472e9e95f6449bda7bd2e1a218e17de_thumbnail.png",
+                "name": "Water Reporter"
+            },
+            "stub": "MAZEFsXUf5nH",
+            "updated_at": "2022-01-01T00:00:00.000000",
+            "url": "/datasets/1"
+        },
+        {
+            "created_at": "2022-01-01T00:00:00.000000",
+            "id": 2,
+            "name": "Rapid Monitoring Network",
+            "organization": {
+                "id": 1,
+                "logo_url": "https://images.waterreporter.org/1216/0472e9e95f6449bda7bd2e1a218e17de_thumbnail.png",
+                "name": "Water Reporter"
+            },
+            "stub": "2UGHqk6EPzuU",
+            "updated_at": "2022-01-01T00:00:00.000000",
+            "url": "/datasets/2"
+        },
+        "..."
+    ]
+}
 ```
 
 #### Retrieve a single data source
