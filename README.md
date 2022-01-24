@@ -114,9 +114,42 @@ GET https://api.waterreporter.org/datasets/1?access_token={token}
 
 ```json
 {
+    "bounds": [
+        -79.679078,
+        36.967377,
+        -76.3434,
+        38.04238
+    ],
     "contributor_count": 5,
     "created": "2021-01-01T00:00:00",
     "description": "...",
+    "extent": {
+        "coordinates": [
+            [
+                [
+                    -79.679078,
+                    36.967377
+                ],
+                [
+                    -79.679078, 
+                    38.04238
+                ],
+                [
+                    -76.3434, 
+                    38.04238
+                ],
+                [
+                    -76.3434, 
+                    36.967377
+                ], 
+                [
+                    -79.679078, 
+                    36.967377
+                ]
+            ]
+        ],
+        "type": "Polygon"
+    },
     "id": 1,
     "last_sampled": "2021-01-01T00:00:00",
     "name": "Most Recent Data",
