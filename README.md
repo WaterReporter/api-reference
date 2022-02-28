@@ -2,6 +2,12 @@
 
 The Water Reporter API is organized around <a href="https://en.wikipedia.org/wiki/Representational_state_transfer" target="_blank">REST</a>. Our API has predictable resource-oriented URLs, accepts form-encoded request bodies, returns <a href="https://www.json.org" target="_blank">JSON-encoded</a> responses, and uses standard <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Status" target="_blank">HTTP response codes</a>, authentication, and <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods" target="_blank">methods</a>.
 
+**Note that aspects of this beta release are unstable and may change without
+notice as we measure usage, performance, and other feedback. We recommend that
+you experiment first and proceed with caution before incorporating API data into
+production applications. As an early adopter you may receive periodic email
+updates as changes occur.**
+
 ## Authentication
 
 The Water Reporter API uses API keys to authenticate requests. You can view and manage your API keys in your Water Reporter dashboard.
