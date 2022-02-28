@@ -35,6 +35,7 @@ The Water Reporter API is served over HTTPS. To ensure data privacy, unencrypted
 * [Parameters](#parameters)
 * [Stations](#stations)
 * [Watersheds](#watersheds)
+* [Posts](#posts)
 
 ### Datasets
 
@@ -870,3 +871,58 @@ GET https://api.waterreporter.org/watersheds/020700&access_token={token}
 }
 ```
 
+### Posts
+
+#### Retrieve a list of posts
+
+`GET /posts`
+
+Retrieve a list of posts (please note that records are returned in reverse chronological order by default).
+
+**Parameters**
+
+| Name | Type| Description |
+| :--- | :--- | :--- |
+| `access_token`<br /><sub>required</sub> | string |  Your Water Reporter access token. |
+| `page` | integer | The page number of a result set. **Default:** `1` |
+| `limit` | integer | The number of readings to return. The maximum is `100`. **Default:** `10` |
+| `org` | string | A numeric organization identifier. |
+| `huc` | string | A 6-, 8-, 10-, or 12-digit <a href="https://nas.er.usgs.gov/hucs.aspx" target="_blank">hydrologic unit code</a>. |
+| `tag` | string | A tag string. Example: `SaltWatch` |
+
+**Request**
+
+```
+GET https://api.waterreporter.org/posts?access_token={token}
+```
+
+**Response**
+
+```json
+{
+    "records": [{
+            "caption": "Willard Brook and tributaries flowing again after much-needed rainfall in October and November. Conditions are still drier than normal here and elsewhere in the state.",
+            "created": "2021-01-01T00:00:00",
+            "creator": {
+                "image_url": "https://images.waterreporter.org/4460/855aef6571e645ddbab0b21fec5ff260_icon@2x.jpg", 
+                "name": "Water Reporter Team"
+            }, 
+            "huc12": {
+                "code": "020700080301", 
+                "name": "South Fork Catoctin Creek"
+            }, 
+            "id": 18294, 
+            "image_url": "https://img.waterreporter.org/3efc935fe5dc4d95815fcfdafe46379d_square@2x.jpg", 
+            "location": {
+                "coordinates": [
+                    -77.013695, 
+                    38.89924
+                ], 
+                "type": "Point"
+            },
+            "updated": "2021-01-01T00:00:00"
+        },
+        "..."
+    ]
+}
+```
