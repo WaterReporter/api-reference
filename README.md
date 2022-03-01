@@ -110,7 +110,7 @@ Retrieve a data source.
 | Name | Type| Description |
 | :--- | :--- | :--- |
 | `access_token`<br /><sub>required</sub> | string | Your Water Reporter access token. |
-| `expand` | string | An optional string containing fields that can be expanded into objects. Currently accepts `form`. |
+| `expand` | string | An optional string containing fields that can be expanded into objects. Currently accepts `form` and `organization`. |
 
 **Request**
 
