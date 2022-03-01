@@ -4,7 +4,7 @@ The Water Reporter API is organized around <a href="https://en.wikipedia.org/wik
 
 ## Caveats
 
-As the current version is a beta release, please be aware that we're still working on it. Aspects of this release are unstable and may change without notice as we measure usage, performance, and other feedback. Breaking changes may include modified URL structures and the removal or re-naming of JSON object properties. We recommend that you experiment first and proceed with caution before incorporating API data into production applications. As an early adopter you may receive periodic email updates as we make adjustments and introduce new functionality.
+As the current version is a read-only beta release, please be aware that we're still working on it. Aspects of this release are unstable and may change without notice as we measure usage, performance, and other feedback. Breaking changes may include modified URL structures and the removal or re-naming of JSON object properties. We recommend that you experiment first and proceed with caution before incorporating API data into production applications. As an early adopter you may receive periodic email updates as we make adjustments and introduce new functionality.
 
 ## Authentication
 
