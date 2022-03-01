@@ -115,7 +115,7 @@ Retrieve a data source.
 **Request**
 
 ```
-GET https://api.waterreporter.org/datasets/1?access_token={token}
+GET https://api.waterreporter.org/datasets/1?access_token={token}&expand=organization
 ```
 
 **Response**
