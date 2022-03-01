@@ -883,7 +883,7 @@ Retrieve a list of posts (please note that records are returned in reverse chron
 | :--- | :--- | :--- |
 | `access_token`<br /><sub>required</sub> | string |  Your Water Reporter access token. |
 | `page` | integer | The page number of a result set. **Default:** `1` |
-| `limit` | integer | The number of readings to return. The maximum is `100`. **Default:** `10` |
+| `limit` | integer | The number of records to return. The maximum is `100`. **Default:** `10` |
 | `org` | integer | A numeric organization identifier. |
 | `huc` | string | A 6-, 8-, 10-, or 12-digit <a href="https://nas.er.usgs.gov/hucs.aspx" target="_blank">hydrologic unit code</a>. |
 | `tag` | string | A tag string. Example: `SaltWatch` |
