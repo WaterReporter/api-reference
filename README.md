@@ -47,7 +47,7 @@ Retrieve a list of data sources. Supports spatial search using hydrologic unit c
 
 | Name | Type| Description |
 | :--- | :--- | :--- |
-| `access_token`<br /><sub>required</sub> | string |  Your Water Reporter access token. |
+| `access_token`<br /><sub>required</sub> | string | Your Water Reporter access token. |
 | `limit` | integer | The number of objects to be returned. Limit can range between 1 and 100. **Default:** 10. |
 | `page` | integer | The result set page to be returned. **Default:** 1. |
 | `date_format` | string | A string that specifies the desired format of all timestamps in the response object. Using `epoch` will format timestamps in seconds since the Unix epoch. Allowed values are `iso` and `epoch`. **Default:** `iso` |
@@ -109,7 +109,8 @@ Retrieve a data source.
 
 | Name | Type| Description |
 | :--- | :--- | :--- |
-| `access_token`<br /><sub>required</sub> | string |  Your Water Reporter access token. |
+| `access_token`<br /><sub>required</sub> | string | Your Water Reporter access token. |
+| `expand` | string | An optional string containing fields that can be expanded into objects. Currently accepts `form`. |
 
 **Request**
 
@@ -188,7 +189,7 @@ Retrieve a collection of measurements for a given environmental parameter at a s
 
 | Name | Type| Description |
 | :--- | :--- | :--- |
-| `access_token`<br /><sub>required</sub> | string |  Your Water Reporter access token. | |
+| `access_token`<br /><sub>required</sub> | string | Your Water Reporter access token. | |
 | `station_id`<br /><sub>required</sub> | integer | The primary key of a station. | |
 | `parameter_id`<br /><sub>required</sub> | integer | The primary key of a parameter. The parameter and station must belong to the same data source. | |
 | `date_format` | string | A string that specifies the desired format of all timestamps in the response object. Using `epoch` will format timestamps in seconds since the Unix epoch. Allowed values are `iso` and `epoch`. **Default:** `iso` |
@@ -303,7 +304,7 @@ Retrieve a single measurement for a given environmental parameter at a specific 
 
 | Name | Type| Description |
 | :--- | :--- | :--- |
-| `access_token`<br /><sub>required</sub> | string |  Your Water Reporter access token. |
+| `access_token`<br /><sub>required</sub> | string | Your Water Reporter access token. |
 | `date_format` | string | A string that specifies the desired format of all timestamps in the response object. Using `epoch` will format timestamps in seconds since the Unix epoch. Allowed values are `iso` and `epoch`. **Default:** `iso` |
 
 **Request**
@@ -397,9 +398,9 @@ Retrieve a collection of environmental parameters from a single data source or s
 
 | Name | Type| Description |
 | :--- | :--- | :--- |
-| `access_token`<br /><sub>required</sub> | string |  Your Water Reporter access token. |
-| `dataset_id`<br /><sub>required</sub> | integer |  The primary key of a data source. |
-| `station_id`<br /><sub>required</sub> | integer |  The primary key of a station. |
+| `access_token`<br /><sub>required</sub> | string | Your Water Reporter access token. |
+| `dataset_id`<br /><sub>required</sub> | integer | The primary key of a data source. |
+| `station_id`<br /><sub>required</sub> | integer | The primary key of a station. |
 | `date_format` | string | A string that specifies the desired format of all timestamps in the response object. Using `epoch` will format timestamps in seconds since the Unix epoch. Allowed values are `iso` and `epoch`. **Default:** `iso` |
 
 **Request**
@@ -478,8 +479,8 @@ Retrieve a single environmental parameter.
 
 | Name | Type| Description |
 | :--- | :--- | :--- |
-| `access_token`<br /><sub>required</sub> | string |  Your Water Reporter access token. |
-| `station_id` | integer |  The primary key of a station. Use this parameter to constrain the scope of statistical computations for `reading_count`, `station_count`, `sample_count`, `min`, `max`, `mean`, `standard deviation`, and `variance`. |
+| `access_token`<br /><sub>required</sub> | string | Your Water Reporter access token. |
+| `station_id` | integer | The primary key of a station. Use this parameter to constrain the scope of statistical computations for `reading_count`, `station_count`, `sample_count`, `min`, `max`, `mean`, `standard deviation`, and `variance`. |
 | `date_format` | string | A string that specifies the desired format of all timestamps in the response object. Using `epoch` will format timestamps in seconds since the Unix epoch. Allowed values are `iso` and `epoch`. **Default:** `iso` |
 
 **Request**
@@ -558,7 +559,7 @@ Retrieve a collection of stations (monitoring locations).
 
 | Name | Type| Description |
 | :--- | :--- | :--- |
-| `access_token`<br /><sub>required</sub> | string |  Your Water Reporter access token. |
+| `access_token`<br /><sub>required</sub> | string | Your Water Reporter access token. |
 | `sets`<br /><sub>required</sub> | string | A comma-separated list of one or more data source identifiers. Required if `orgs` not present. |
 | `orgs`<br /><sub>required</sub> | string | A comma-separated list of one or more organization identifiers. Required if `sets` not present. |
 | `date_format` | string | A string that specifies the desired format of all timestamps in the response object. Using `epoch` will format timestamps in seconds since the Unix epoch. Allowed values are `iso` and `epoch`. **Default:** `iso` |
@@ -611,7 +612,7 @@ Retrieve a station. A station represents a single monitoring location.
 
 | Name | Type| Description |
 | :--- | :--- | :--- |
-| `access_token`<br /><sub>required</sub> | string |  Your Water Reporter access token. |
+| `access_token`<br /><sub>required</sub> | string | Your Water Reporter access token. |
 | `date_format` | string | A string that specifies the desired format of all timestamps in the response object. Using `epoch` will format timestamps in seconds since the Unix epoch. Allowed values are `iso` and `epoch`. **Default:** `iso` |
 | `geo_format` | string | A string that specifies the desired geometry transformation. Use `xy` to retrieve station coordinates as separate `lat` and `lng` values. Allowed values are `geojson` and `xy`. **Default:** `geojson` |
 | `nn` | boolean | If true, the response will include a station's four nearest neighbors in the same data source (if any). The `neighbors` object will contain a dictionary that specifies the stations immediately to the east and west of the target station. Allowed values are `true` and `false`. **Default:** `false` |
@@ -736,7 +737,7 @@ Retrieve the station closest to a geographic point. A station represents a singl
 
 | Name | Type| Description |
 | :--- | :--- | :--- |
-| `access_token`<br /><sub>required</sub> | string |  Your Water Reporter access token. |
+| `access_token`<br /><sub>required</sub> | string | Your Water Reporter access token. |
 | `lng`<br /><sub>required</sub> | integer or float | A geographic coordinate that specifies the east–west position of a point on the Earth's surface. Must be in decimal degrees. |
 | `lat`<br /><sub>required</sub> | integer or float | A geographic coordinate that specifies the north–south position of a point on the Earth's surface. Must be in decimal degrees. |
 | `radius` | integer or float | Search radius in meters as measured from the point represented by `lng` and `lat`. **Limited to 20 kilometers (20,000 meters).** |
@@ -791,7 +792,7 @@ Retrieve a single watershed using a coordinate pair (longitude, latitude).
 
 | Name | Type| Description |
 | :--- | :--- | :--- |
-| `access_token`<br /><sub>required</sub> | string |  Your Water Reporter access token. |
+| `access_token`<br /><sub>required</sub> | string | Your Water Reporter access token. |
 | `lng`<br /><sub>required</sub> | integer or float | A geographic coordinate that specifies the east–west position of a point on the Earth's surface. Must be in decimal degrees. |
 | `lat`<br /><sub>required</sub> | integer or float | A geographic coordinate that specifies the north–south position of a point on the Earth's surface. Must be in decimal degrees. |
 
@@ -836,7 +837,7 @@ Retrieve a watershed using a 6-, 8-, 10-, or 12-digit <a href="https://nas.er.us
 
 | Name | Type| Description |
 | :--- | :--- | :--- |
-| `access_token`<br /><sub>required</sub> | string |  Your Water Reporter access token. |
+| `access_token`<br /><sub>required</sub> | string | Your Water Reporter access token. |
 
 **Request**
 
@@ -881,7 +882,7 @@ Retrieve a list of posts (please note that records are returned in reverse chron
 
 | Name | Type| Description |
 | :--- | :--- | :--- |
-| `access_token`<br /><sub>required</sub> | string |  Your Water Reporter access token. |
+| `access_token`<br /><sub>required</sub> | string | Your Water Reporter access token. |
 | `page` | integer | The page number of a result set. **Default:** `1` |
 | `limit` | integer | The number of records to return. The maximum is `100`. **Default:** `10` |
 | `org` | integer | A numeric organization identifier. |
