@@ -565,7 +565,7 @@ Retrieve a collection of stations (monitoring locations).
 | `date_format` | string | A string that specifies the desired format of all timestamps in the response object. Using `epoch` will format timestamps in seconds since the Unix epoch. Allowed values are `iso` and `epoch`. **Default:** `iso` |
 | `geo_format` | string | A string that specifies the desired geometry transformation. Use `xy` to retrieve station coordinates as separate `lat` and `lng` values. Allowed values are `geojson` and `xy`. **Default:** `geojson` |
 | `bbox` | string | A comma-separated list of bounding box coordinates in the format `minX,minY,maxX,maxY`. Example: `-76.616539,39.269442,-76.58255,39.291366` |
-| `include_empty` | boolean | By default, responses filter out stations that do not contain data. Pass this parameter to bypass the filter. No value is required, as the presence of the parameter translates to a `true` condition. |
+| `include_empty` | boolean | By default, responses filter out stations that do not contain data. Pass this parameter to bypass the filter. No value is required (`include_empty=true` is redundant and `include_empty=false` is contradictory). |
 
 **Request**
 
@@ -745,6 +745,7 @@ Retrieve the station closest to a geographic point. A station represents a singl
 | `date_format` | string | A string that specifies the desired format of all timestamps in the response object. Using `epoch` will format timestamps in seconds since the Unix epoch. Allowed values are `iso` and `epoch`. **Default:** `iso` |
 | `geo_format` | string | A string that specifies the desired geometry transformation. Use `xy` to retrieve station coordinates as separate `lat` and `lng` values. Allowed values are `geojson` and `xy`. **Default:** `geojson` |
 | `nn` | boolean | If true, the response will include a station's four nearest neighbors in the same data source (if any). The `neighbors` object will contain a dictionary that specifies the stations immediately to the east and west of the target station. Allowed values are `true` and `false`. **Default:** `false` |
+| `include_empty` | boolean | By default, responses filter out stations that do not contain data. Pass this parameter to bypass the filter. No value is required (`include_empty=true` is redundant and `include_empty=false` is contradictory). |
 
 **Request**
 
