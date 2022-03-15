@@ -26,6 +26,10 @@ https://api.waterreporter.org
 
 The Water Reporter API is served over HTTPS. To ensure data privacy, unencrypted HTTP is not supported.
 
+## Coordinate format
+
+Geographic coordinates provided to the Water Reporter API should be formatted in the order `longitude, latitude` and specified as decimal degrees in the WGS84 coordinate system. This pattern matches the [GeoJSON](https://geojson.org) standard used throughout Water Reporter.
+
 ## Resources
 
 * [Datasets](#datasets)
