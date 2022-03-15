@@ -41,7 +41,9 @@ The Water Reporter API is served over HTTPS. To ensure data privacy, unencrypted
 
 `GET /datasets`
 
-Retrieve a list of data sources. Supports spatial search using hydrologic unit codes, bounding boxes, or geographic point coordinates (proximity). When combining parameters, make sure to provide values that are logically consistent for your use case. Redundant or conflicting spatial filters may produce unexpected or empty result sets.
+Retrieve a list of **public** data sources. Supports spatial search using hydrologic unit codes, bounding boxes, or geographic point coordinates (proximity). When combining parameters, make sure to provide values that are logically consistent for your use case. Redundant or conflicting spatial filters may produce unexpected or empty result sets.
+
+**Important:** Spatial filters operate on **public** monitoring stations within a data source. Responses will never include any data source that is not marked `public` by its owner(s) using the configuration setting available in the Water Reporter data manager.
 
 **Parameters**
 
