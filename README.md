@@ -80,7 +80,7 @@ GET https://api.waterreporter.org/datasets?access_token={token}
       "name": "Trends Analysis 2009-2019",
       "organization": {
         "id": 1,
-        "logo_url": "https://images.waterreporter.org/1216/0472e9e95f6449bda7bd2e1a218e17de_thumbnail.png",
+        "logo_url": "...",
         "name": "Water Reporter"
       },
       "stub": "MAZEFsXUf5nH",
@@ -93,7 +93,7 @@ GET https://api.waterreporter.org/datasets?access_token={token}
       "name": "Rapid Monitoring Network",
       "organization": {
         "id": 1,
-        "logo_url": "https://images.waterreporter.org/1216/0472e9e95f6449bda7bd2e1a218e17de_thumbnail.png",
+        "logo_url": "...",
         "name": "Water Reporter"
       },
       "stub": "2UGHqk6EPzuU",
@@ -170,7 +170,7 @@ GET https://api.waterreporter.org/datasets/1?access_token={token}&expand=organiz
   "organization": {
     "description": "...",
     "id": 1,
-    "logo_url": "https://img.waterreporter.org/8b14473a5c114cf7920bab13f7b8753d_square.png",
+    "logo_url": "...",
     "name": "Blue Water Baltimore"
   },
   "parameter_count": 10,
@@ -597,7 +597,7 @@ GET https://api.waterreporter.org/stations?sets=1&access_token={token}
       "hibernate": false,
       "huc_12": "Bailey Creek-James River",
       "id": 1,
-      "image_url": "https://images.waterreporter.org/5151/fef367c3928d45d691cc8aafd8c4021f_original.jpg",
+      "image_url": "...",
       "is_active": true,
       "key": "b5c6dcce3abed32c43b1ebcab1fa648b",
       "last_sampled": "2021-01-01T00:00:00",
@@ -920,7 +920,7 @@ GET https://api.waterreporter.org/posts?access_token={token}
       "caption": "Willard Brook and tributaries flowing again after much-needed rainfall in October and November. Conditions are still drier than normal here and elsewhere in the state.",
       "created": "2021-01-01T00:00:00",
       "creator": {
-        "image_url": "https://images.waterreporter.org/4460/855aef6571e645ddbab0b21fec5ff260_icon@2x.jpg",
+        "image_url": "...",
         "name": "Water Reporter Team"
       },
       "huc12": {
@@ -928,7 +928,7 @@ GET https://api.waterreporter.org/posts?access_token={token}
         "name": "South Fork Catoctin Creek"
       },
       "id": 18294,
-      "image_url": "https://img.waterreporter.org/3efc935fe5dc4d95815fcfdafe46379d_square@2x.jpg",
+      "image_url": "...",
       "location": {
         "coordinates": [
           -77.013695,
