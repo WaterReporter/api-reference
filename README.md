@@ -597,7 +597,7 @@ GET https://api.waterreporter.org/stations?sets=1&access_token={token}
       "description": "...",
       "hibernate": false,
       "huc_12": "Bailey Creek-James River",
-      "huc_tree": {
+      "huc": {
         "6": {
           "code": "020802",
           "name": "James"
@@ -665,7 +665,7 @@ GET https://api.waterreporter.org/stations/1?access_token={token}&geo_format=xy&
   "description": "...",
   "hibernate": false,
   "huc_12": "Northwest Harbor-Patapsco River",
-  "huc_tree": {
+  "huc": {
     "6": {
       "code": "020600",
       "name": "Upper Chesapeake"
