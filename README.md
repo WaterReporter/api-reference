@@ -572,8 +572,8 @@ Retrieve a collection of stations (monitoring locations).
 | Name | Type| Description |
 | :--- | :--- | :--- |
 | `access_token`<br /><sub>required</sub> | string | Your Water Reporter access token. |
-| `sets`<br /><sub>required</sub> | string | A comma-separated list of one or more data source identifiers. Required if `huc` or `orgs` not present. |
-| `orgs`<br /><sub>required</sub> | string | A comma-separated list of one or more organization identifiers. Required if `huc` or `sets` not present. |
+| `sets` | string | A comma-separated list of one or more data source identifiers. **Required if `huc` or `orgs` not present.** |
+| `orgs` | string | A comma-separated list of one or more organization identifiers. **Required if `huc` or `sets` not present.** |
 | `huc` | string | A 6-, 8-, 10-, or 12-digit <a href="https://nas.er.usgs.gov/hucs.aspx" target="_blank">hydrologic unit code</a>. |
 | `date_format` | string | A string that specifies the desired format of all timestamps in the response object. Using `epoch` will format timestamps in seconds since the Unix epoch. Allowed values are `iso` and `epoch`. **Default:** `iso` |
 | `geo_format` | string | A string that specifies the desired geometry transformation. Use `xy` to retrieve station coordinates as separate `lat` and `lng` values. Allowed values are `geojson` and `xy`. **Default:** `geojson` |
