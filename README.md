@@ -572,8 +572,9 @@ Retrieve a collection of stations (monitoring locations).
 | Name | Type| Description |
 | :--- | :--- | :--- |
 | `access_token`<br /><sub>required</sub> | string | Your Water Reporter access token. |
-| `sets`<br /><sub>required</sub> | string | A comma-separated list of one or more data source identifiers. Required if `orgs` not present. |
-| `orgs`<br /><sub>required</sub> | string | A comma-separated list of one or more organization identifiers. Required if `sets` not present. |
+| `sets`<br /><sub>required</sub> | string | A comma-separated list of one or more data source identifiers. Required if `huc` or `orgs` not present. |
+| `orgs`<br /><sub>required</sub> | string | A comma-separated list of one or more organization identifiers. Required if `huc` or `sets` not present. |
+| `huc` | string | A 6-, 8-, 10-, or 12-digit <a href="https://nas.er.usgs.gov/hucs.aspx" target="_blank">hydrologic unit code</a>. |
 | `date_format` | string | A string that specifies the desired format of all timestamps in the response object. Using `epoch` will format timestamps in seconds since the Unix epoch. Allowed values are `iso` and `epoch`. **Default:** `iso` |
 | `geo_format` | string | A string that specifies the desired geometry transformation. Use `xy` to retrieve station coordinates as separate `lat` and `lng` values. Allowed values are `geojson` and `xy`. **Default:** `geojson` |
 | `bbox` | string | A comma-separated list of bounding box coordinates in the format `minX,minY,maxX,maxY`. Example: `-76.616539,39.269442,-76.58255,39.291366` |
@@ -596,6 +597,24 @@ GET https://api.waterreporter.org/stations?sets=1&access_token={token}
       "description": "...",
       "hibernate": false,
       "huc_12": "Bailey Creek-James River",
+      "huc_tree": {
+        "6": {
+          "code": "020802",
+          "name": "James"
+        },
+        "8": {
+          "code": "02080206",
+          "name": "Lower James"
+        },
+        "10": {
+          "code": "0208020602",
+          "name": "Herring Creek-James River"
+        },
+        "12": {
+          "code": "020802060201",
+          "name": "Bailey Creek-James River"
+        }
+      },
       "id": 1,
       "image_url": "...",
       "is_active": true,
@@ -646,6 +665,24 @@ GET https://api.waterreporter.org/stations/1?access_token={token}&geo_format=xy&
   "description": "...",
   "hibernate": false,
   "huc_12": "Northwest Harbor-Patapsco River",
+  "huc_tree": {
+    "6": {
+      "code": "020600",
+      "name": "Upper Chesapeake"
+    },
+    "8": {
+      "code": "02060003",
+      "name": "Gunpowder-Patapsco"
+    },
+    "10": {
+      "code": "0206000312",
+      "name": "Patapsco River-Chesapeake Bay"
+    },
+    "12": {
+      "code": "020600031204",
+      "name": "Stoney Creek-Patapsco River-Chesapeake Bay"
+    }
+  },
   "id": 1,
   "image_url": "...",
   "is_active": true,
